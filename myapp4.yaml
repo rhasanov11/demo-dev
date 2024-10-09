@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: webserver-simple-deployment-v2
 spec:
-  replicas: 6
+  replicas: 1
   selector:
     matchLabels:
       app: webserver-simple-app
