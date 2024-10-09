@@ -10,7 +10,7 @@ spec:
   template:
     metadata:
       labels:
-        app: webserver-simple-app
+        app: webserver-simple-app-v10
     spec:
       containers:
         - name: webserver-simple-container
