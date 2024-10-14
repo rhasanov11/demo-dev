@@ -1,19 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-deployment
+  name: webserver-simple-deployment-v2
 spec:
+  replicas: 1
   selector:
     matchLabels:
-      app: nginx
-  replicas: 3 # tells deployment to run 2 pods matching the template
+      app: webserver-simple-app
   template:
     metadata:
       labels:
-        app: nginx
+        app: webserver-simple-app
     spec:
       containers:
-      - name: nginx
-        image: nginx:latest
-        ports:
-        - containerPort: 8086
+        - name: webserver-simple-container
+          image: python:3
+          command:
+            - python
+            - -m
+            - http.server
+          ports:
+            - containerPort: 8080
